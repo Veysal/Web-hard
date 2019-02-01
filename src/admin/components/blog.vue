@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1 Мой блог
+  h1 мой блог
 </template>
 
 <script>
