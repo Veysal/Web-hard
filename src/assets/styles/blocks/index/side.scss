@@ -1,0 +1,38 @@
+.side {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.side__container {
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side__item {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  backface-visibility: hidden;
+  margin: 0;
+  transition: all 1s;
+
+  &--front {
+    width: auto;
+  }
+  &--back {
+    @include phones {
+      width: 300px;
+    }
+  }
+
+}
+
+.rotate {
+  transform: rotateY(180deg)
+}
+

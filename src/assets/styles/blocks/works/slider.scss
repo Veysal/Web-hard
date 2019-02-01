@@ -1,0 +1,253 @@
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $bg-color--light;
+}
+
+.slider__wrapper {
+  display: grid;
+  grid-template:
+          "info display " 70%
+          "info btns" 30%
+  / 50% 50%;
+  height: 100%;
+  background-color: #efebe0;
+
+  @include tablets {
+    grid-template:
+            'display' 56vh
+            'info' 29vh
+            'btns' 23vh
+    / 100%;
+    height: 108vh;
+  }
+
+  @include phones {
+    grid-template:
+            'display' 45.5%
+            'info' 39%
+            'btns' 1fr
+    / 100%;
+    height: 100vh;
+  }
+}
+
+.slider__info {
+  grid-area: info;
+  background-color: #f0efe9;
+  padding-left: calc(70 * 100 / 1800)%;
+
+  @include desktop {
+    padding-left: 0;
+  }
+}
+
+.slider__title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 54px 76px 64px 58px;
+
+  .title {
+    letter-spacing: 1px;
+
+    &::before {
+      margin-right: 1%;
+    }
+
+    &::after {
+      margin-left: 1%;
+    }
+
+    @include tablets {
+      letter-spacing: 3px;
+      font-size: 52px;
+
+      &::before {
+        margin-right: 2.5%;
+      }
+
+      &::after {
+        margin-left: 2.5%;
+      }
+    }
+
+    @include phones {
+      letter-spacing: 1.7px;
+      font-size: 41px;
+
+      &::before {
+        margin-right: 4%;
+      }
+
+      &::after {
+        margin-left: 4%;
+      }
+    }
+  }
+
+
+  @include tablets {
+    margin: 40px 76px 40px 58px;
+
+    .title-bg {
+      max-width: 100%;
+      width: 63%;
+      top: 5px;
+    }
+  }
+
+  @include phones {
+    margin: 22px 0 30px 0;
+  }
+}
+
+.slider__display {
+  grid-area: display;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide__img {
+  max-width: 60%;
+
+  &--display {
+    min-width: 80%;
+  }
+}
+
+.slider__btns {
+  grid-area: btns;
+  display: flex;
+  height: 100%;
+}
+
+.slider__btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  outline: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $dark-grey;
+    opacity: .3;
+    transition: all .3s;
+    z-index: 100;
+  }
+}
+
+.slide__btn-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__btn:hover::before{
+  opacity: .4;
+}
+
+.slider__btn-pic {
+  position: absolute;
+  fill: white;
+  width: 43px;
+  height: 27px;
+  z-index: 999999;
+}
+
+.slider__btn:hover{
+  .slider__btn-pic {
+    animation: .7s ease-in-out 0s normal none infinite running;
+
+    &--portf_arrow_up {
+      animation-name: bounce-up;
+    }
+
+    &--portf_arrow_down {
+      animation-name: bounce-down;
+    }
+  }
+}
+
+@keyframes bounce-up {
+    0% {transform: translateY(0)}
+    50% {transform: translateY(-50%)}
+    100% {transform: translateY(0)}
+}
+@keyframes bounce-down {
+    0% {transform: translateY(0)}
+    50% {transform: translateY(50%)}
+    100% {transform: translateY(0)}
+}
+
+//animation for slider buttons
+.slide-down-enter-active, .slide-down-leave-active {
+  transition: 1s;
+}
+
+.slide-down-leave {
+  bottom: 0;
+}
+
+.slide-down-leave-to {
+  bottom: -100%;
+}
+
+.slide-down-enter {
+  bottom: 100%;
+}
+
+.slide-down-enter-to {
+  bottom: 0;
+}
+
+.slide-up-enter-active, .slide-up-leave-active {
+  transition: 1s;
+}
+
+.slide-up-leave {
+  bottom: 0;
+}
+
+.slide-up-leave-to {
+  bottom: 100%;
+}
+
+.slide-up-enter {
+  bottom: -100%;
+}
+
+.slide-up-enter-to {
+  bottom: 0;
+}
+
+//animation for display
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
+

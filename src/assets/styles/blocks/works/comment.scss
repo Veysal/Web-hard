@@ -1,0 +1,98 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+  height: 100%;
+  padding-left: 10px;
+
+  @include tablets {
+    max-width: 330px;
+    margin-right: 0;
+    padding-left: 0;
+    padding-bottom: 20px;
+  }
+
+  @include phones {
+    &:first-child {
+      margin-bottom: -8px;
+    }
+  }
+
+
+  &:first-child {
+    margin-right: 20px;
+
+    @include tablets {
+      margin-right: 0;
+    }
+  }
+}
+
+.comment__quotes {
+  font-family: "FontAwesome";
+  font-size: 36px;
+  color: rgba($dark-grey, .2);
+  margin-bottom: 12px;
+
+  &:before {
+    content: '\f10d';
+  }
+
+  @include phones {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.comment__text {
+  line-height: 26px;
+  margin-bottom: 20px;
+
+  @include tablets {
+    line-height: 27px;
+    margin-bottom: 16px;
+  }
+
+  @include phones {
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+}
+
+.comment__user {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.comment__user-desc {
+  display: flex;
+  flex-direction: column;
+  color: $main;
+  line-height: 24px;
+
+  @include phones {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+.comment__img-wrap {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 22px;
+
+  @include phones {
+    transform: scale(.65);
+    margin-right: 10px;
+    margin-left: -14px;
+  }
+}
+
+.comment__name {
+  font-family: 'Roboto-Bold';
+}

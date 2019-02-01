@@ -1,0 +1,21 @@
+.works {
+  display: grid;
+  grid-template:
+     'works' minmax(99vh, auto)
+     'reviews' auto
+    / 100vw;
+  height: 100%;
+}
+
+.works__content {
+  grid-area: works;
+  background-color: #faf8f0;
+}
+
+.works__reviews {
+  grid-area: reviews;
+}
+
+
+
+

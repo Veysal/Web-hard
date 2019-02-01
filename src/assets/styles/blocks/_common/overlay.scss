@@ -1,0 +1,36 @@
+.overlay__container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999999999;
+  background-color: rgba($secondary, .75);
+}
+
+.overlay__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.overlay__message {
+  font-family: 'Roboto-Regular';
+  margin-bottom: 10px;
+}
+
+.overlay__btn {
+  width: 104px;
+  height: 40px;
+  background-color: $main;
+  color: white;
+  line-height: 40px;
+  border-radius: 5px;
+}

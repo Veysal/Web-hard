@@ -1,0 +1,51 @@
+mixin icon(iconName, iconClass)
+  svg(class=`${iconClass} ${iconClass}--${iconName}`)
+    use(xlink:href=`./assets/images/icons/sprite.svg#${iconName}`)
+
+mixin image(imagePath, imageAlt, imageClass, retinaImg)
+  img(src=`./assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`, srcset=`./assets/images/${retinaImg} 2x`)
+
+mixin imagePresent(imagePath, imageClass)
+  img(src=`./assets/images/${imagePath}` class=`${imageClass}` role='presentation')
+
+mixin user(titleText, titleCLass, desc, descClass)
+  .user
+    .user-img__wrapper
+      +image('avatars/avatar.jpg', 'avatar pic', 'user__img', 'avatars/avatar2x.jpg')
+    h1(class=`${titleCLass}`) #{titleText}
+    h2(class=`${descClass}`)  #{desc}
+
+mixin header
+  -
+    var socials = [
+    { name: 'vk', href: 'https://vk.com/veysal_best'},
+    { name: 'github', href: 'https://github.com/Veysal'},
+    { name: 'in', href: 'https://www.linkedin.com'}
+    ]
+
+  header.hero#js_header(class=`hero--${title}`)
+    section.hero__container
+      .hero__bg.js_hero__bg
+      .hero__socials
+        ul.socials__list
+          each item in socials
+            li.socials__item.socials__item--hero
+              a(href=`${item.href}`).socials__link
+                +icon(`${item.name}`, 'social__img')
+      .hero__menu
+        .burger-btn#js_menuBtn
+          button(type="button").burger-btn__elem
+      if title=='Блог'
+        .hero__title.hero__title--blog.js_hero__title
+          +icon('blog_header', 'hero__pic hero__pic--blog')
+        .hero__content.js_hero__content.hero__content--blog
+          +user('Блог', 'title title--color-white', 'Статьи, которые я написал', 'user__desc')
+        button(type="button").hero__arrow-down.hero__arrow-down--blog
+          i(class="fa fa-chevron-down" aria-hidden="true")#js_arrowDown
+      else
+        .hero__title.js_hero__title
+          +icon('portfolio_header', 'hero__pic')
+        .hero__content.js_hero__content
+          +user('Вейсал Таштанов', 'user__title', 'Личный сайт веб разработчика', 'user__desc')
+        button(type="button").hero__arrow-down
+          i(class="fa fa-chevron-down" aria-hidden="true")#js_arrowDown

@@ -1,0 +1,134 @@
+.articles__container {
+  display: grid;
+  grid-template:
+    'titles articles' 1fr
+  / .3fr .72fr;
+  padding: 54px 0 136px 0;
+
+
+  @include desktop {
+    grid-template:
+            'titles articles' 1fr
+            / .3fr .7fr;
+    justify-items: center;
+    padding: 54px 0 136px 5px;
+  }
+
+  @include tablets {
+    grid-template:
+      'articles' 1fr
+    / 100%;
+    padding: 46px 0 200px 0;
+  }
+
+  @include phones {
+    padding: 32px 0 300px 0;
+  }
+}
+
+.articles__titles {
+  grid-area: titles;
+  width: 60%;
+  height: 100%;
+  justify-self: end;
+  padding-top: 7px;
+  margin-right: 116px;
+
+  @include desktop {
+    margin-right: 15%;
+    width: 80%;
+  }
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.articles__section {
+  grid-area: articles;
+  max-width: 900px;
+  height: 100%;
+
+  @include desktop {
+    width: 87%;
+   justify-self: start;
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  @include tablets {
+    width: 100%;
+    padding-left: 24px;
+  }
+
+  @include phones {
+    padding-left: 10px;
+  }
+}
+
+.articles__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.articles__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px solid rgba($dark-grey, .07);
+  padding-bottom: 70px;
+  margin-bottom: 63px;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+.articles__title {
+  font-family: 'BERNIERRegular-Regular';
+  font-size: 35px;
+  margin-bottom: 19px;
+  width: 80%;
+
+  @include tablets {
+    margin-bottom: 15px;
+  }
+
+  @include phones {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+}
+
+.articles__date {
+  color: rgba($main, .7);
+  margin-bottom: 20px;
+
+  @include tablets {
+    margin-bottom: 10px;
+  }
+
+  @include phones {
+    margin-bottom: 13px;
+  }
+}
+
+.articles__content {
+  line-height: 26px;
+
+  @include tablets {
+    line-height: 25px;
+  }
+
+  @include phones {
+    line-height: 27px;
+  }
+
+  p {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

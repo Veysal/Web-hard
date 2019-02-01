@@ -1,0 +1,42 @@
+.arrow-down__pic {
+  height: 16px;
+  width: 26px;
+  fill: white;
+  cursor: pointer;
+  opacity: .5;
+  transition: all .3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.arrow__container {
+  animation: 1.3s ease-in-out 0s normal none infinite running;
+  animation-name: bounce-up;
+  cursor: pointer;
+
+  &--down {
+    animation-name: bounce-down;
+  }
+}
+
+.arrow__up {
+  fill: white;
+  width: 43px;
+  height: 27px;
+}
+
+
+
+
+@keyframes bounce-up {
+  0% {transform: translateY(0)}
+  50% {transform: translateY(-10px)}
+  100% {transform: translateY(0)}
+}
+@keyframes bounce-down {
+  0% {transform: translateY(0)}
+  50% {transform: translateY(10px)}
+  100% {transform: translateY(0)}
+}

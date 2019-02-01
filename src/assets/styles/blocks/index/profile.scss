@@ -1,0 +1,43 @@
+.profile-block {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  width: auto;
+  justify-content: space-between;
+  border-radius: 5px;
+
+
+  @include phones {
+    width: 97%;
+
+    .user__desc {
+      width: 110%;
+    }
+  }
+}
+
+.profile-block__top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 40px 55px 36px 55px;
+  background-color: rgba(white, .85);
+
+  @include tablets {
+    padding: 44px 50px 36px 50px;
+  }
+}
+
+.profile-block__bot {
+  width: 100%;
+  background-color: rgba($main, .5);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.profile__socials {
+  margin-top: 35px;
+}

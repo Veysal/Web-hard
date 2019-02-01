@@ -1,0 +1,23 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'works'
+
+block content
+  main.works
+    .works__content
+      .triangle__container
+        .works__triangle.triangle.triangle--left
+          svg(viewBox="0 0 1000 185" preserveAspectRatio="none").triangle-pic.triangle-pic--works
+            polygon(points='0,0 0,185 1000,185 1000,175')
+        .triangle.triangle--right
+          svg(viewBox="0 0 1000 185" preserveAspectRatio="none").triangle-pic.triangle-pic--works
+            polygon(points='0,185 1000,185 1000,0 0,175')
+      #slider-component
+
+    .works__reviews
+      include ../blocks/reviews.pug
+
+
+block scripts
+  script(src='works.bundle.js')

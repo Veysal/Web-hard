@@ -1,0 +1,35 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'about'
+
+block content
+  main.about__container
+    .about__content
+      .triangle__container
+        .about__triangle.triangle.triangle--left
+          svg(viewBox="0 0 1000 185" preserveAspectRatio="none").triangle-pic.triangle-pic--about-left
+            polygon(points='0,0 0,185 1000,185 1000,175')
+        .triangle.triangle--right
+          svg(viewBox="0 0 1000 185" preserveAspectRatio="none").triangle-pic.triangle-pic--about-right
+            polygon(points='0,185 1000,185 1000,0 0,175')
+      .about__content-container
+        include ../blocks/userblock.pug
+        .skills__container
+          .skills__title-container
+            h2.skills__title.title--multiline.title.title--small
+              | Чем я могу быть
+              br
+              | Вам полезен
+            p.skills__desc
+              | Больше всего меня привлекет Frontend разработка,
+              | но я также знаком и могу решать не сложные задачи на Backend.
+              | Но давайте по порядку.
+          #skills-component
+
+    .about__contacts
+      include ../blocks/contacts.pug
+
+
+block scripts
+  script(src='about.bundle.js')

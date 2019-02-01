@@ -1,0 +1,15 @@
+{
+  "main": "#00bfa5",
+  "secondary": "#009688",
+  "bg-color": "#efeee9",
+  "bg-color--dark": "#eeebdf",
+  "bg-color--light": "#faf8f0",
+  "text-color": "#455a64",
+  "beige": "#dfdcd5",
+  "dark-grey": "#373e42",
+  "red": "#e44845",
+  "fullscreen": "1800px",
+  "desktop": "1200px",
+  "tablets": "768px",
+  "phones": "440px"
+}

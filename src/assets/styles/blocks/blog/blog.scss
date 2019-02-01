@@ -1,0 +1,25 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $bg-color;
+}
+
+.blog__container {
+  display: grid;
+  grid-template:
+    'blog' minmax(100vh, auto)
+  / 100%;
+}
+
+.block__content {
+  grid-area: blog;
+}
+
+.blog__triangle {
+  display: flex;
+
+  .triangle {
+    width: 50%;
+  }
+}

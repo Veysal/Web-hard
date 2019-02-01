@@ -1,0 +1,61 @@
+html {
+  font-size: 16px;
+  user-select: none;
+
+  @include tablets {
+    font-size: 14px;
+  }
+
+  @include phones {
+    font-size: 13px;
+  }
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto-Regular', Helvetica, sans-serif;
+  font-size: 16px;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: grid;
+  min-height: 100%;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,24 @@
+script(type='text/x-template')#articles
+  .articles
+    .articles__container
+      asideMenu(
+        :articlesData="articles"
+      )
+      articles(
+        :articlesData="articles"
+      )
+
+
+script(type='text/x-template')#aside-menu
+  aside.aside-menu.js_aside-menu
+    ul.aside-menu__list.js_aside-menu__list
+      li(v-for="articlesObj in articlesData").aside-menu__item.js_scroll-article
+        button(:data-index-button='articlesObj.index').aside-menu__btn {{articlesObj.title}}
+
+script(type='text/x-template')#articles__section
+  section.articles__section
+    .articles__list.js_articles__list
+      article(v-for="articlesObj in articlesData" :data-article='articlesObj.index').articles__item.js_articles__item
+        h3.articles__title {{articlesObj.title}}
+        time(:datetime='articlesObj.date').articles__date {{articlesObj.datetime}}
+        .articles__content(v-html='articlesObj.content')

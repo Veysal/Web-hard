@@ -1,0 +1,57 @@
+script(type="text/x-template")#slider-root
+  //slider
+  section.slider
+    .slider__title
+      .title-bg
+        +icon('works_header', 'title__pic')
+      h1.title Мои работы
+    .slider__wrapper
+      info(
+        :work="currentWork"
+      )
+      display(
+        :work="currentWork"
+      )
+      btns(
+        :works="works"
+        :index="currentIndex"
+        @slide="handleSlide"
+      )
+
+script(type="text/x-template")#slider-info
+  .slider__info
+    .tools
+      transition(
+        appear
+        :css='false'
+        @enter="enterCb"
+      )
+        h3(:key='work.title').title.title--small.title--multiline.tools__title {{work.title}}
+      .tools__list
+        transition-group(
+          appear
+          :css='false'
+          @enter="enterCb"
+        )
+          .tools__name(:key='work.tools') {{work.tools}}
+      a.tools__btn
+        +icon('link', 'tools__btn-pic')
+        a.tools__btn-text(:href="work.link") Посмотреть сайт
+
+script(type="text/x-template")#slider-display
+  .slider__display
+    transition(name="fade" mode="out-in")
+      img(:src="work.photo" :key="work.photo").slide__img.slide__img--display
+
+script(type="text/x-template")#slider-btns
+  .slider__btns
+    button.slider__btn.slider__btn--prev(@click="slide('prev')")
+      transition-group(name='slide-down')
+        .slide__btn-container(:key="prevBtnWorks[index].photo")
+          img(:src="prevBtnWorks[index].photo").slide__img.slide__btn-img
+      +icon('portf_arrow_down', 'slider__btn-pic')
+    button.slider__btn.slider__btn--next(@click="slide('next')")
+      transition-group(name='slide-up')
+        .slide__btn-container(:key="nextBtnWorks[index].photo")
+          img(:src="nextBtnWorks[index].photo").slide__img.slide__btn-img
+      +icon('portf_arrow_up', 'slider__btn-pic')

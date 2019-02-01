@@ -1,0 +1,182 @@
+.tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 420px;
+  height: 100%;
+
+  @include phones {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+.tools__title {
+  margin-bottom: 64px;
+
+  span {
+    display: inline-block;
+
+    &.whitespace {
+      &:after {
+        content: '\00a0';
+      }
+    }
+  }
+
+  @include tablets {
+    width: 200%;
+    margin-top: -6px;
+    margin-bottom: 16px;
+
+    &::before {
+      margin-right: 3%;
+      margin-top: 1.5%;
+    }
+
+    &::after {
+      margin-left: 3%;
+      margin-top: 1.5%;
+    }
+  }
+
+  @include phones {
+    font-size: 26px;
+    width: 95%;
+    margin-top: 34px;
+    margin-bottom: 40px;
+
+    &::before {
+      margin-right: 4%;
+      margin-top: 3%;
+    }
+
+    &::after {
+      margin-left: 4%;
+      margin-top: 3%;
+    }
+  }
+}
+
+.tools__list {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: $main;
+  line-height: 50px;
+  border-top: 1px solid rgba($secondary, .3);
+  border-bottom: 1px solid rgba($secondary, .3);
+  margin-bottom: 41px;
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
+
+  @include tablets {
+    margin-bottom: 20px;
+    line-height: 59px;
+    width: 83%;
+  }
+
+  @include phones {
+    line-height: 36px;
+    width: 100%;
+  }
+}
+
+.tools__name {
+
+  span {
+    display: inline-block;
+
+    &.whitespace {
+      &:after {
+        content: '\00a0';
+      }
+    }
+  }
+}
+
+.tools__btn {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 46px;
+  background-color: $main;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s;
+
+  @include desktop {
+    transform: translateX(-6px);
+  }
+
+  @include phones {
+    width: 190px;
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
+.tools__btn-text {
+  color: white;
+  line-height: 46px;
+  text-decoration: none;
+  margin-left: 14px;
+}
+
+.tools__btn-pic {
+  width: 20px;
+  height: 19px;
+  margin-left: 18px;
+  fill: white;
+}
+
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  animation-duration: 0.75s;
+  animation-name: bounceIn;
+}

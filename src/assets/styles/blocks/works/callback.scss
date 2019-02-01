@@ -1,0 +1,174 @@
+.callback {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding-top: 30px;
+  width: 380px;
+  margin: 0 auto 266px auto;
+  overflow: hidden;
+
+  @include desktop {
+
+    margin: 0 auto 290px auto;
+  }
+
+  @include tablets {
+    width: 350px;
+    padding-top: 35px;
+    margin: 0 auto 404px auto;
+  }
+
+  @include phones {
+    width: 300px;
+    padding-top: 16px;
+  }
+}
+
+.callback__bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  &-img {
+    object-fit: contain;
+  }
+}
+
+.callback__blur {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url("./assets/images/bg/bg-review.png") center no-repeat;
+  filter: blur(20px);
+}
+
+.callback__form-wrapper {
+  z-index: 10;
+}
+
+.callback__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.callback__title {
+  margin-bottom: 32px;
+
+  @include tablets {
+    margin-bottom: 12px;
+  }
+
+  @include phones {
+    font-size: 26px;
+    margin-bottom: 22px;
+  }
+}
+
+.callback__form-items {
+  display: flex;
+  flex-direction: column;
+  padding: 0 19px;
+}
+
+.callback__input-wrap {
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.callback__input {
+  transition: all .3s;
+  display: flex;
+  height: 45px;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 20px;
+  color: $dark-grey;
+
+  &::placeholder {
+    color: rgba($dark-grey, .5);
+  }
+
+  &:valid {
+    border-color: $secondary;
+  }
+
+  &--error {
+    border-color: $red;
+  }
+}
+.callback__text {
+  padding-top: 15px;
+  height: 140px;
+  resize: none;
+}
+
+.callback__buttons {
+  display: flex;
+  width: 100%;
+}
+
+.callback__btn {
+  background-color: rgba($main, .3);
+  font-family: 'Roboto-Medium';
+  color: white;
+  width: 100%;
+  line-height: 45px;
+  border-right: 2px solid rgba(white, .5);
+  transition: all .3s;
+
+  @include tablets {
+    font-size: 18px;
+    line-height: 49px;
+  }
+
+  &:first-child {
+    border-bottom-left-radius: 5px;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 5px;
+    border-right: none;
+  }
+
+  &:hover {
+    background-color: rgba($main, 1)
+  }
+}
+
+.error-window {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  background-color: $red;
+  margin-top: 0px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  transition: all .3s;
+
+
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom: 10px solid $red;
+    top: -20px;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+
+  &--active {
+    height: auto;
+    margin-top: 14px;
+    padding: 16px;
+    overflow: visible;
+  }
+}

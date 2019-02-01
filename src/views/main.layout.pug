@@ -1,0 +1,31 @@
+include ./common/_mixins
+
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    link(href="./assets/images/favicon.ico" rel="icon" type="image/x-icon")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous")
+
+
+    title Portfolio | #{title}
+    link(rel='stylesheet' href='main.min.css')
+  body
+    .wrapper
+      include ./common/preloader.pug
+      include ./common/menu.pug
+      +header
+      block content
+      include ./common/footer.pug
+      include ./components/entry
+
+
+    script(src='bootloader.bundle.js')
+    script(src='vendor.bundle.js')
+    block scripts
+
+

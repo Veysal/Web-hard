@@ -1,0 +1,29 @@
+script(type="text/x-template")#skills-container
+  //skills
+  .skills
+    skills-list(
+      :skillsData="skills"
+    )
+
+script(type="text/x-template")#skills-list
+  ul.skills__list
+    li.skills__item(v-for="skillsGroupObj in skillsData")
+      h3.skills__name {{skillsGroupObj.skillsGroup}}
+      skills-item(
+        :skills="skillsGroupObj.skills"
+      )
+
+script(type="text/x-template")#skills-item
+  ul.skills__block
+    li.skills__tech(v-for="(skillPercentage, skillTitle) in skills")
+      skill(
+        :skillPercentage="skillPercentage"
+        :skillTitle="skillTitle"
+      )
+
+script(type="text/x-template")#skill
+  .skill
+    svg(viewBox="0 0 120 120" preserveAspectRatio="none").circle__percentage
+      circle(cx="60" cy="60" r="50" stroke-width='40' stroke='#00bfa5' fill='none').circle--under.circle
+      circle(cx="60" cy="60" r="50" stroke-width='40' stroke='#00bfa5' fill='none' ref="circle").circle--above.circle
+    span.skill__tech-name {{skillTitle}}

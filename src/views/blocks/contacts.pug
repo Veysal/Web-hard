@@ -1,0 +1,22 @@
+-
+  var contacts = [
+  {name:'skype', text:'Вейсал Таштанов', href: 'Вейсал Таштанов'},
+  {name:'envelope', text:'tveysal93@mail.ru', href: 'mailto:tveysal93@mail.ru'},
+  {name:'phone', text:'+7-927-063-45-49', href: '+7-927-063-45-49'}
+  ]
+
+section.contacts
+  script
+  .contacts__map-container#map
+  .contacts__block
+    h2.contacts__title.title.title--small Контакты
+    ul.contacts__list
+      each contact in contacts
+        li.contacts__item
+          a.contacts__link(href=`${contact.href}`)
+            +icon(`${contact.name}`, 'contacts__img')
+            span.contacts__text #{contact.text}
+      li.contacts__item
+        .contacts__link
+          +icon('map_marker', 'contacts__img')
+          span.contacts__text г.Волгоград, Центральный р-он

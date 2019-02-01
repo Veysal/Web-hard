@@ -1,0 +1,63 @@
+
+.triangle {
+  position: absolute;
+  display: flex;
+  bottom: 100%;
+  width: 100%;
+
+  &__container {
+    position: relative;
+  }
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+}
+
+.triangle-pic {
+  height: 100%;
+  width: 100%;
+  fill: $bg-color;
+
+  &--dark {
+    fill: $bg-color--dark;
+  }
+
+  &--works {
+    fill: #faf8f0;
+  }
+
+  &--blog {
+    fill: #fff;
+
+    @include tablets {
+      transform: translateY(2px);
+    }
+  }
+
+  &--about {
+    &-left {
+      fill: $bg-color;
+    }
+    &-right {
+      fill: $bg-color--dark;
+
+      @include tablets {
+        fill: $bg-color;
+      }
+    }
+  }
+}
+
+
+.triangle__container {
+  display: flex;
+
+  .triangle {
+    width: 50%;
+  }
+}

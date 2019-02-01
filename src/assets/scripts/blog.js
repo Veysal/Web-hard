@@ -1,0 +1,6 @@
+import './modules/preloader'
+import './modules/menu'
+import './modules/heroParallax'
+import './modules/articles'
+import './modules/blogNav'
+import './modules/arrows'

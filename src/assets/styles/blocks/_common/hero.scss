@@ -1,0 +1,263 @@
+.hero {
+  height: 65vh;
+
+  @include tablets {
+    height: 54vh;
+  }
+
+  @include phones {
+    height: 98vh;
+  };
+}
+
+.hero__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 135%;
+  background: url(./assets/images/bg/bg-hero--full.png) center center / cover no-repeat;
+
+  @include tablets {
+    background: url(./assets/images/bg/bg-hero.png) center center / cover no-repeat;
+  }
+
+  @media (min-device-pixel-ratio: 1.5) or (min-resolution: 144dpi) {
+    background: url(./assets/images/bg/bg-hero2x.png) center center / cover no-repeat;
+  }
+}
+
+.hero__socials {
+  position: absolute;
+  top: calc(61 * 100 / 1200)%;
+  left: calc(60 * 100 / 1800)%;
+  z-index: 10;
+
+  @include desktop {
+    left: calc(16 * 100 / 1800)%;
+  }
+
+  @include tablets {
+    top: calc(70 * 100 / 1200)%;
+    left: calc(6 * 100 / 1800)%;
+  }
+
+  @include phones {
+    top: 11px;
+    left: -12px;
+    transform: scale(.8);
+  }
+}
+
+.hero__menu {
+  position: absolute;
+  top: calc(49 * 100 / 1200)%;
+  right: 80px;
+  z-index: 99999;
+
+  @include desktop {
+    right: calc(27 * 100 / 1800)%;
+  }
+
+  @include tablets {
+    top: calc(57 * 100 / 1200)%;
+    right: calc(14 * 100 / 768)%;
+
+  }
+
+  @include phones {
+    top: 1px;
+    right: 2px;
+    transform: scale(.6);
+  }
+}
+
+.hero__content {
+  margin-top: calc(145 * 100 / 1800)%;
+  z-index: 10;
+
+  @include desktop {
+    margin-top: calc(155 * 100 / 1200)%;
+  }
+
+  @include tablets {
+    margin-top: calc(120 * 100 / 768)%;
+  }
+
+  @include phones {
+    margin-top: calc(162 * 100 / 440)%;
+  }
+}
+
+.hero__title {
+  position: absolute;
+  display: flex;
+  width: 61%;
+  height: 90%;
+
+  @include desktop {
+    width: 100%;
+  }
+
+  @include phones {
+    display: none;
+  }
+}
+
+.hero__pic {
+  width: 100%;
+  fill: white;
+  opacity: .06;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.hero__arrow-down {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background: none;
+  bottom: 77px;
+  z-index: 100;
+  cursor: default;
+  outline: none;
+
+
+  @include tablets {
+    bottom: 48px;
+  }
+}
+
+.hero--blog {
+  height: 43.3vh;
+
+  @include tablets {
+    height: 49.5vh;
+  }
+
+  @include phones {
+    height: 98vh;
+  }
+
+  .hero__arrow-down--blog {
+    display: none;
+
+    @include phones {
+      display: flex;
+    }
+  }
+
+  .hero__bg {
+    background-position: center -56px;
+  }
+
+  .hero__socials {
+    top: calc(90 * 100 / 1200)%;
+    left: calc(348 * 100 / 1800)%;
+
+    @include desktop {
+      top: calc(70 * 100 / 900)%;
+      left: calc(7 * 100 / 1200)%;
+    }
+
+    @include tablets {
+      top: calc(40 * 100 / 650)%;
+      left: calc(10 * 100 / 768)%;
+    }
+
+    @include phones {
+       top: 11px;
+       left: -20px;
+       transform: scale(.8);
+
+      .socials__item {
+        padding: 0 16px;
+      }
+     }
+  }
+
+  .hero__menu {
+    top: calc(78 * 100 / 1200)%;
+    right: calc(360 * 100 / 1800)%;
+
+    @include desktop {
+      right: calc(22 * 100 / 1200)%;
+    }
+
+    @include desktop {
+      top: calc(30 * 100 / 650)%;
+      right: calc(24 * 100 / 768)%;
+    }
+
+    @include phones {
+      top: calc(2 * 100 / 650)%;
+      right: calc(8 * 100 / 768)%;
+    }
+  }
+
+  .hero__content {
+    margin-top: calc(78 * 100 / 1800)%;
+
+    @include desktop {
+      margin-top: calc(82 * 100 / 1200)%;
+    }
+
+    @include tablets {
+      margin-top: calc(98 * 100 / 650)%;
+    }
+
+    @include phones {
+      margin-top: calc(235 * 100 / 650)%;
+    }
+
+    .user-img__wrapper {
+      margin-bottom: 18px;
+
+      @include phones {
+        margin-bottom: 24px;
+      }
+    }
+
+    .title {
+      margin: 0;
+
+      &::before {
+        margin-right: 10%;
+      }
+
+      &::after {
+        margin-left: 10%;
+      }
+    }
+  }
+}
+
+.hero__title--blog {
+  width: auto;
+  height: 220px;
+  top: calc(550 * 100 / 1200)%;
+}
+
+.hero--works {
+
+  @include tablets {
+    height: 54vh;
+  }
+
+  @include phones {
+    height: 98vh;
+  }
+
+}
+

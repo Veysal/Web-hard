@@ -1,0 +1,148 @@
+.aside-menu {
+  grid-area: titles;
+  width: 60%;
+  justify-self: end;
+  padding-top: 6px;
+  margin-right: calc(377 * 100 / 1800)%;
+
+  @include desktop {
+    margin-right: 16%;
+    width: 80%;
+  }
+
+  @include tablets {
+    grid-area: articles;
+    position: relative;
+    width: 80%;
+    transform: translateX(-105%);
+    background-color: $main;
+    z-index: 99;
+    cursor: pointer;
+    transition: transform .3s;
+    will-change: transform;
+
+    &--active {
+      transform: translateX(-20%);
+
+    }
+
+    @include phones {
+      transform: translateX(-84%);
+      width: 100%;
+
+      &--active {
+        transform: translateX(-10%);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: $main;
+    }
+
+
+    &::after {
+      content: '';
+      position: sticky;
+      top: 26%;
+      display: block;
+      height: 40px;
+      width: 40px;
+      background-color: $main;
+      left: 100%;
+      border-radius: 50%;
+      transform: translateX(25%);
+      z-index: -10;
+    }
+  }
+}
+
+.aside-menu__list {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+}
+
+.aside-menu__item {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 42px;
+  margin-bottom: 20px;
+  padding: 0 17px;
+  cursor: pointer;
+  transition: all .3s;
+
+  &--active {
+
+    .aside-menu__btn {
+      font-family: 'Roboto-Bold';
+      color: $main;
+    }
+
+    @include tablets {
+      .aside-menu__btn {
+        font-family: 'Roboto-Bold';
+        color: white;
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 3px;
+    height: 100%;
+    background-color: $main;
+    opacity: 0;
+    transition: all .3s;
+
+    @include tablets {
+      display: none;
+    }
+  }
+}
+
+.aside-menu__item--active::after {
+  opacity: 1;
+}
+
+.aside-menu__btn {
+  height: auto;
+  padding: 0;
+  background: none;
+  font-family: 'Roboto-Regular';
+  color: rgba($dark-grey, .95);
+  text-align: right;
+  line-height: 27px;
+  outline: none;
+  transition: all .1s;
+
+  @include tablets {
+    width: 80%;
+    color: rgba(white, .65);
+  }
+
+  @include phones {
+    width: 70%;
+  }
+
+  &:hover {
+    color: $main;
+
+    @include tablets {
+      color: white;
+    }
+  }
+}

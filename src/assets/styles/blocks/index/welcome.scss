@@ -1,0 +1,88 @@
+
+.welcome {
+  display: grid;
+  grid-template:
+    "welcome-t" max-content
+    "welcome-c" 3fr
+    "welcome-b" 1fr
+   / 100%;
+  height: 100vh;
+
+  @include phones {
+    grid-template:
+      "welcome-t" max-content
+      "welcome-c" 3fr
+      "welcome-b" 10%
+      / 100%;
+  }
+}
+
+.welcome__top {
+  grid-area: welcome-t;
+  align-items: end;
+
+  @include phones {
+    align-items: center;
+  }
+}
+
+.welcome__btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: calc(15 * 100 / 1200)%;
+  margin-right: calc(95 * 100 / 1800)%;
+
+  @include desktop {
+    margin-top: calc(18 * 100 / 900)%;
+    margin-right: calc(20 * 100 / 1200)%;
+  }
+
+  @include tablets {
+    margin-top: calc(28 * 100 / 900)%;
+    margin-right: calc(26 * 100 / 768)%;
+  }
+
+  @include phones {
+    margin-top: calc(36 * 100 / 650)%;
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+
+.welcome__content {
+  grid-area: welcome-c;
+}
+
+.welcome__bot {
+  grid-area: welcome-b;
+}
+
+.welcome__copyright {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  margin: 0 20px;
+  padding-bottom: 54px;
+  opacity: .8;
+
+  @include desktop {
+    align-items: center;
+    padding-bottom: 86px;
+  }
+
+  @include tablets {
+    align-items: flex-end;
+    padding-bottom: 30px;
+  }
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+
+    .copyright__name {
+      padding-bottom: 5px;
+    }
+  }
+}

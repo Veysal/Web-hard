@@ -1,0 +1,29 @@
+//callback
+
+.callback__bg#js_blur-container
+  +image('bg/bg-review.png', 'изображение гор', 'callback__bg-img', 'bg/bg-review2x.png')
+
+.callback#js_blur-wrap
+  .callback__blur#js_blur
+  .callback__form-wrapper
+    form(method='post' autocomplete ).callback__form#callback
+      h3.callback__title.title.title--small Связаться со мной
+      .callback__form-items
+        label(for="name").callback__input-wrap
+          input(id="name" type='text' placeholder='Имя' tabindex='1' required).callback__input.callback__name
+          .error-window
+        label(for="email").callback__input-wrap
+          input(id="email" type='email' placeholder='Email' tabindex='2' required).callback__input.callback__email
+          .error-window
+        label(for="comment").callback__input-wrap
+          textarea(id="comment" placeholder='Ваше сообщение' tabindex='3' required).callback__input.callback__text
+          .error-window
+      .callback__buttons
+        button(type='submit').callback__btn#sendBtn Отправить
+        button(type='reset').callback__btn Очистить
+
+script(type="template" id="responseTemplate")
+  .overlay__container
+    .overlay__block
+      span.overlay__message
+      button(type="button").overlay__btn Закрыть

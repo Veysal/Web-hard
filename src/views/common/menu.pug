@@ -1,0 +1,13 @@
+
+-
+  var links = [
+  { name: 'Мои работы', href: 'works'},
+  { name: 'Обо мне', href: 'about'},
+  { name: 'Блог', href: 'blog'},
+  { name: 'Авторизация', href: 'index'}
+  ]
+nav.nav.nav--menu#js_menu
+  ul.nav__list.nav__list--menu
+    each link in links
+      li.nav__item.nav__item--menu
+        a.nav__link.nav__link--menu.title.title--menu(href=`${link.href}.html`) #{link.name}

@@ -1,0 +1,105 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'BERNIERRegular-Regular';
+  font-size: 63px;
+  color: $dark-grey;
+  text-align: center;
+
+  @include tablets {
+    font-size: 58px;
+  }
+
+  @include phones {
+    font-size: 42px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 5px;
+    background-color: $dark-grey;
+    opacity: .2;
+  }
+
+  &::before {
+    margin-right: 4% ;
+  }
+
+  &::after {
+    margin-left: 4%;
+  }
+
+  &--menu {
+    color: white;
+
+    &::before,
+    &::after {
+      opacity: 0;
+      background-color: white;
+      transition: all .3s;
+    }
+
+    &::before {
+      margin-right: 2% ;
+    }
+
+    &::after {
+      margin-left: 2%;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: .85;
+    }
+  }
+
+  &--small {
+    font-size: 35px;
+  }
+
+  &--multiline {
+    align-items: initial;
+
+    &::before,
+    &::after {
+      margin-top: 3%;
+
+      @include desktop {
+        margin-top: 4%;
+      }
+    }
+
+  }
+
+  &--color-white {
+    color: white;
+    margin: 30px 0 15px 0;
+
+    &::before,
+    &::after {
+      background-color: white;
+    }
+  }
+}
+
+.title-bg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title__pic {
+  width: 100%;
+  fill: $dark-grey;
+  opacity: .07;
+}

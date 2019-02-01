@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Коворкинг 'Воркадиум'",
+    "tools": "html, css",
+    "photo": "./assets/images/works/coworking.png",
+    "link": "https://github.com/Veysal"
+  },
+  {
+    "title": "Landing page 'Burgers'",
+    "tools": "html, css, javascript",
+    "photo": "./assets/images/works/burgers.jpg",
+    "link": "https://veysal.github.io/web-start/"
+  },
+  {
+    "title": "Сайт Портфолио 'Горы'",
+    "tools": "html, css, JS, Vue",
+    "photo": "./assets/images/works/portfolio.jpg",
+    "link": "https://github.com/Veysal"
+  }
+]

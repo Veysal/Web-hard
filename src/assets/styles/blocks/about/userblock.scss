@@ -1,0 +1,205 @@
+
+.userblock {
+  grid-area: left;
+  display: grid;
+  grid-template:
+    "title main" 1fr
+  / 50% 50%;
+  background-color: $bg-color;
+  padding-right: 2.22222222%;
+
+  padding-left: 20px;
+
+  @include desktop {
+    grid-template:
+    'title' min-content
+     'main' 1fr
+    / 100% ;
+  }
+
+  @include tablets {
+    grid-template:
+            'title' min-content
+            'main' 100vh
+    / 100% ;
+    padding-right: 0;
+    padding: 0 10%;
+  }
+
+  @include phones {
+    grid-template:
+            'title' min-content
+            'main' max-content
+    / 100% ;
+    padding: 0;
+  }
+}
+
+
+.userblock__title {
+  grid-area: title;
+  position: relative;
+  letter-spacing: 2px;
+  margin-top: -4px;
+  justify-self: end;
+  width: 95%;
+  max-width: 382px;
+
+    @include desktop {
+      width: 100%;
+      margin: 0 auto 40px auto;
+    }
+
+    @include tablets {
+      letter-spacing: initial;
+      margin: 38px auto 40px auto;
+    }
+
+    @include tablets {
+      letter-spacing: 2px;
+      margin: 24px auto 40px auto;
+    }
+
+  .title-bg {
+    top: 2%;
+
+    @include desktop {
+      top: 33%;
+      width: 95%;
+    }
+
+    @include desktop {
+      top: 48%;
+      width: 65%;
+    }
+  }
+}
+
+.userblock__content {
+  grid-area: main;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 23px;
+  padding-top: 10px;
+
+  @include desktop {
+    padding-top: 0;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  @include phones {
+    padding-left: 0;
+  }
+}
+
+.userblock__img-wrap {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: calc(32 * 100 / 1200)%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include desktop {
+    width: 60%;
+    margin-bottom: 24px;
+  }
+
+  @include tablets {
+    width: 54%;
+    margin-bottom: 42px;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+
+.userblock__img {
+  max-width: 100%;
+
+  @include desktop {
+    padding-right: 20px;
+  }
+
+  @include tablets {
+    padding-right: 0;
+  }
+
+  @include phones {
+    max-width: 70%;
+  }
+}
+
+.userblock__subtitle {
+  margin-bottom: calc(77 * 100 / 1200)%;
+
+  &:after {
+    margin-left: 9%;
+  }
+  &:before {
+    margin-right: 9%;
+  }
+
+  @include desktop {
+    margin-right: 42px;
+    margin-bottom: calc(60 * 100 / 1200)%;
+
+    &:after {
+      margin-left: 6%;
+    }
+    &:before {
+      margin-right: 6%;
+    }
+  }
+
+  @include tablets {
+    margin-right: 20px;
+    margin-bottom: calc(22 * 100 / 1200)%;
+
+    &:after {
+      margin-left: 3%;
+    }
+    &:before {
+      margin-right: 3%;
+    }
+  }
+
+  @include phones {
+    margin-right: 0;
+    font-size: 26px;
+
+    &:after {
+      margin-left: 3%;
+    }
+    &:before {
+      margin-right: 3%;
+    }
+  }
+}
+
+.userblock__text {
+  margin-bottom: 10px;
+  width: 95%;
+  line-height: 24px;
+
+  @include desktop {
+    width: 87%;
+    padding-right: 55px;
+  }
+
+  @include tablets {
+    width: 85%;
+    padding-right: 17px;
+    margin-bottom: 18px;
+  }
+
+  @include phones {
+    width: 100%;
+    padding-right: 0;
+    padding: 0 20px;
+  }
+}
